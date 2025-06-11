@@ -28,7 +28,15 @@ listContainer.addEventListener('click', function (e) {
 function saveData() {
     localStorage.setItem('data', listContainer.innerHTML)
 };
+// function showData() {
+//     listContainer.innerHTML = localStorage.setItem('data')
+// };
+
 function showData() {
-    listContainer.innerHTML = localStorage.setItem('data')
-};
+  const data = localStorage.getItem('data');
+  if (data) {
+    listContainer.innerHTML = data;
+  }
+}
+
 showData();
