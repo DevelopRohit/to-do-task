@@ -1,0 +1,119 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #89f7fe, #66a6ff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.todo-container {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+.todo-container h1 {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.input-section {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 1rem;
+}
+
+.input-section input {
+  flex: 1;
+  padding: 10px;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+}
+
+.input-section button {
+  padding: 10px 15px;
+  border: none;
+  background-color: #66a6ff;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.input-section button:hover {
+  background-color: #4f8edb;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  padding: 10px;
+  margin-bottom: 8px;
+  border-radius: 5px;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  left: 20px;
+  cursor: pointer;
+
+}
+
+ul li::before{
+  content: '';
+  cursor: pointer;
+  position: absolute;
+  height: 28px;
+  width: 28px;
+  right: 400px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  background-image: url(img/unchecked.png);
+}
+
+ul li.checket{
+  color: #555;
+  text-decoration: line-through;
+  background-image: url();
+
+}
+
+ul li.checket::before{
+  background-image: url(img/checked.png);
+}
+
+
+ul li span {
+  position: absolute;
+  right: 0;
+  top: 5px;
+  color: #b2b6bb;
+}
+
+@media (max-width: 480px) {
+  .todo-container {
+    padding: 1.5rem;
+  }
+
+  .input-section {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .input-section input,
+  .input-section button {
+    width: 100%;
+  }
+
+  .todo-container h1 {
+    font-size: 1.3rem;
+  }
+}
